@@ -1,0 +1,779 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101522">
+<title>Para o meu amor 🌧️❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink: #f5a9c8;
+  --white: #fff6fb;
+  --glass: rgba(24, 30, 47, 0.78);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(ellipse at top, #35435c 0%, transparent 55%),
+    linear-gradient(180deg, #182438, #101522 65%, #090d16);
+}
+
+/* FUNDO */
+.background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.moon {
+  position: absolute;
+  top: 9%;
+  right: 12%;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #f9e9dc;
+  box-shadow: 0 0 35px #f9e9dc55;
+  opacity: .7;
+}
+
+.city {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 27%;
+  background: linear-gradient(180deg, #182237, #090d16);
+  clip-path: polygon(
+    0 30%, 7% 30%, 7% 50%, 13% 50%, 13% 18%,
+    20% 18%, 20% 60%, 26% 60%, 26% 35%,
+    34% 35%, 34% 12%, 42% 12%, 42% 55%,
+    51% 55%, 51% 28%, 59% 28%, 59% 48%,
+    67% 48%, 67% 10%, 76% 10%, 76% 50%,
+    85% 50%, 85% 25%, 93% 25%, 93% 45%,
+    100% 45%, 100% 100%, 0 100%
+  );
+}
+
+.rain {
+  position: absolute;
+  inset: -100px 0 0;
+  pointer-events: none;
+}
+
+.drop {
+  position: absolute;
+  top: -80px;
+  width: 1px;
+  height: 65px;
+  background: linear-gradient(transparent, #c9e6ff80);
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(120vh) translateX(-35px); }
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20% 20%, #fff9, transparent),
+    radial-gradient(2px 2px at 75% 30%, #fff8, transparent),
+    radial-gradient(1px 1px at 55% 12%, #fff9, transparent),
+    radial-gradient(2px 2px at 35% 42%, #fff7, transparent);
+}
+
+.heart-float {
+  position: fixed;
+  bottom: -50px;
+  color: #f5a9c8;
+  opacity: 0;
+  pointer-events: none;
+  animation: floatHeart 9s linear infinite;
+}
+
+@keyframes floatHeart {
+  10% { opacity: .4; }
+  100% {
+    transform: translateY(-115vh) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+/* CABEÇALHO */
+header {
+  position: relative;
+  z-index: 2;
+  padding: 20px 16px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #eac7d9;
+  text-transform: uppercase;
+}
+
+header span {
+  color: var(--pink);
+}
+
+/* EXPERIÊNCIA */
+main {
+  width: min(100% - 28px, 680px);
+  min-height: 78vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 0 35px;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  animation: appear .8s ease;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(24px, 6vw, 44px) clamp(20px, 6vw, 42px);
+  border: 1px solid #f5cce333;
+  border-radius: 24px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 70px #0005;
+  text-align: center;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f5cce399, transparent);
+}
+
+.eyebrow {
+  margin-bottom: 20px;
+  color: var(--pink);
+  font: 10px Arial, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.icon {
+  margin-bottom: 18px;
+  font-size: 39px;
+  filter: drop-shadow(0 0 15px #f5a9c833);
+}
+
+h1 {
+  margin-bottom: 22px;
+  font-size: clamp(32px, 8vw, 53px);
+  font-weight: normal;
+  line-height: 1.12;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #ffe2ef;
+  font-size: clamp(25px, 6vw, 35px);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+h1 em, h2 em {
+  color: var(--pink);
+  font-weight: normal;
+}
+
+.message {
+  color: #f4edf5;
+  font-size: clamp(15px, 3.8vw, 18px);
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  margin: 25px auto;
+  background: linear-gradient(90deg, transparent, var(--pink), transparent);
+}
+
+.small {
+  color: #d6c3d1;
+  font-size: 13px;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.signature {
+  margin-top: 26px;
+  color: var(--pink);
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* BOTÕES */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn {
+  min-height: 48px;
+  padding: 13px 19px;
+  border: 1px solid #f5a9c866;
+  border-radius: 30px;
+  background: #ffffff0b;
+  color: #ffe6f1;
+  font: 12px Arial, sans-serif;
+  letter-spacing: 1px;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: #f5a9c822;
+}
+
+.btn.primary {
+  border: none;
+  background: linear-gradient(120deg, #f5a9c8, #e8b8db);
+  color: #251623;
+  font-weight: bold;
+  box-shadow: 0 5px 22px #f5a9c822;
+}
+
+.btn:active {
+  transform: scale(.97);
+}
+
+.counter {
+  margin-top: 19px;
+  text-align: center;
+  color: #cbb9cc;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.progress {
+  width: 100%;
+  height: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+  background: #ffffff19;
+}
+
+.progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--pink);
+  transition: width .4s;
+}
+
+.sound {
+  position: fixed;
+  z-index: 5;
+  right: 13px;
+  top: 12px;
+  border: 1px solid #ffffff33;
+  border-radius: 30px;
+  background: #101522cc;
+  color: white;
+  padding: 10px 13px;
+  font: 11px Arial, sans-serif;
+}
+
+.start-note {
+  margin-top: 18px;
+  color: #d7c8d5;
+  font: 11px Arial, sans-serif;
+  line-height: 1.7;
+}
+
+footer {
+  padding: 12px 20px 28px;
+  text-align: center;
+  color: #cbb9cc;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 380px) {
+  .controls { gap: 7px; }
+  .btn { padding: 12px 13px; font-size: 10px; }
+  .moon { width: 60px; height: 60px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+  <div class="stars"></div>
+  <div class="moon"></div>
+  <div class="city"></div>
+  <div class="rain" id="rain"></div>
+</div>
+
+<button class="sound" id="soundButton" onclick="toggleRain()">
+  🌧️ Ligar chuva
+</button>
+
+<header>
+  Uma pequena pausa no mundo <span>♡</span>
+</header>
+
+<main>
+  <div style="width:100%">
+
+    <!-- SLIDE 1 -->
+    <section class="slide active">
+      <div class="card">
+        <div class="eyebrow">Uma surpresa para você</div>
+        <div class="icon">🌧️🌙</div>
+
+        <h1>Para você,<br>
+          <em>meu amor.</em>
+        </h1>
+
+        <div class="divider"></div>
+
+        <p class="message">
+Imagine uma noite chuvosa, o mundo um pouquinho mais silencioso e você tendo alguns minutos só para si.
+
+Preparei este cantinho porque existe uma pessoa que merece ouvir coisas bonitas sobre si mesma.
+
+E essa pessoa é você, Richard.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="small">
+          Coloque seus fones, se quiser, e venha ler com calma. ❤️
+        </p>
+
+        <button class="btn primary" style="margin-top:25px"
+          onclick="startExperience()">
+          ENTRAR NA NOSSA NOITE ♡
+        </button>
+
+        <p class="start-note">
+          A chuva começa quando você tocar no botão. 🌧️
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 2 -->
+    <section class="slide">
+      <div class="card">
+        <div class="eyebrow">01 · O homem que eu admiro</div>
+        <div class="icon">🌧️</div>
+
+        <h2>Você talvez nem perceba,<br>
+          mas eu <em>vejo você.</em>
+        </h2>
+
+        <p class="message">
+Richard, eu vejo o quanto você se esforça.
+
+Vejo que você tem responsabilidades, coisas para resolver, objetivos que deseja alcançar e dias em que provavelmente está cansado, mesmo que nem sempre fale sobre isso.
+
+Quero que saiba que eu não enxergo somente os resultados que você conquista. Eu também admiro o caminho que percorre para chegar até eles.
+
+O seu esforço importa. Sua dedicação importa. E a pessoa que você é durante essa caminhada também importa muito para mim.
+        </p>
+
+        <div class="signature">Eu tenho orgulho de você. ♡</div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3 -->
+    <section class="slide">
+      <div class="card">
+        <div class="eyebrow">02 · Sua dedicação</div>
+        <div class="icon">🕯️</div>
+
+        <h2>Até nos dias cansativos,<br>
+          você continua <em>tentando.</em>
+        </h2>
+
+        <p class="message">
+Meu amor, uma das coisas que admiro em você é saber que está buscando seu caminho e tentando construir algo bom para sua vida.
+
+Eu sei que crescer, trabalhar, aprender e assumir responsabilidades nem sempre é fácil.
+
+Talvez existam dias em que você queira apenas descansar. Dias em que as coisas demorem mais do que esperava. Dias em que você se pergunte se está fazendo o suficiente.
+
+Nesses momentos, quero que se lembre de que você não precisa conquistar o mundo inteiro em um único dia.
+
+Cada passo honesto, cada aprendizado e cada esforço contam.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="small">
+          Eu admiro a sua dedicação, não apenas aquilo que você consegue conquistar.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 4 -->
+    <section class="slide">
+      <div class="card">
+        <div class="eyebrow">03 · Seu valor</div>
+        <div class="icon">🌌</div>
+
+        <h2>Você é muito mais<br>
+          do que aquilo que <em>consegue fazer.</em>
+        </h2>
+
+        <p class="message">
+Richard, quero que você saiba que seu valor não depende de quanto dinheiro ganha, de quantas tarefas consegue terminar ou de quantas pessoas reconhecem seu esforço.
+
+Você é importante mesmo quando precisa descansar.
+
+É importante quando está aprendendo.
+
+É importante quando alguma coisa não sai como planejou.
+
+E continua sendo alguém digno de carinho, respeito e orgulho enquanto trabalha para realizar seus sonhos.
+
+Eu quero que você celebre suas conquistas, mas também quero que tenha paciência consigo mesmo durante o caminho.
+        </p>
+
+        <div class="signature">Você não precisa ser perfeito. ❤️</div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5 -->
+    <section class="slide">
+      <div class="card">
+        <div class="eyebrow">04 · O seu coração</div>
+        <div class="icon">💌</div>
+
+        <h2>Eu admiro o homem<br>
+          que você está <em>se tornando.</em>
+        </h2>
+
+        <p class="message">
+Não é só sobre trabalho ou esforço, meu amor.
+
+Também é sobre sua personalidade, suas ideias, seus gostos, suas qualidades e tudo aquilo que faz de você uma pessoa única.
+
+Eu gosto de conhecer mais sobre você, descobrir o que é importante para você e acompanhar suas conquistas.
+
+Tenho orgulho quando vejo você tentando aprender alguma coisa nova e buscando maneiras de melhorar sua vida.
+
+Espero que você nunca deixe de reconhecer as coisas boas que existem em si mesmo.
+
+Às vezes, a gente é muito mais duro consigo do que seria com alguém que ama. Por isso, trate você mesmo com um pouco da mesma paciência que merece receber dos outros.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 6 -->
+    <section class="slide">
+      <div class="card">
+        <div class="eyebrow">05 · Quando o mundo pesar</div>
+        <div class="icon">🌧️🫂</div>
+
+        <h2>Você também merece<br>
+          um lugar para <em>descansar.</em>
+        </h2>
+
+        <p class="message">
+Meu amor, você não precisa carregar todas as preocupações sozinho nem fingir que está tudo bem em todos os momentos.
+
+Você pode ter dias difíceis. Pode ficar frustrado, cansado ou precisar de um tempo para organizar seus pensamentos.
+
+Isso não diminui sua força.
+
+Espero que você tenha pessoas com quem possa conversar, que encontre momentos de tranquilidade e que consiga cuidar de si enquanto corre atrás dos seus objetivos.
+
+Quero que o nosso relacionamento seja um espaço em que os dois possam falar com sinceridade, escutar um ao outro e aprender juntos.
+
+Você também merece receber o carinho que tantas vezes oferece.
+        </p>
+
+        <div class="signature">Cuide de você também, tá? ♡</div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7 -->
+    <section class="slide">
+      <div class="card">
+        <div class="eyebrow">06 · Nós dois</div>
+        <div class="icon">☔❤️</div>
+
+        <h2>Eu não quero um amor<br>
+          perfeito. Quero um amor <em>verdadeiro.</em>
+        </h2>
+
+        <p class="message">
+Richard, eu sei que nenhum relacionamento vem com todas as respostas prontas.
+
+Nós dois temos coisas para aprender, maneiras diferentes de enxergar algumas situações e momentos em que talvez não consigamos explicar nossos sentimentos tão bem quanto gostaríamos.
+
+Mas eu desejo que a gente continue aprendendo a conversar, a reconhecer os próprios erros e a tratar um ao outro com carinho e respeito.
+
+Não espero que você nunca erre. Quero que possamos aprender com nossos erros.
+
+Não espero que você tenha todas as soluções. Quero que a gente possa conversar sobre os problemas.
+
+E quero que você também saiba que suas necessidades, seus sonhos e seus sentimentos têm espaço na nossa história.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 8 -->
+    <section class="slide">
+      <div class="card">
+        <div class="eyebrow">07 · Uma promessa de carinho</div>
+        <div class="icon">🌙💗</div>
+
+        <h2>Se hoje você estiver cansado,<br>
+          leia isto <em>mais uma vez.</em>
+        </h2>
+
+        <p class="message">
+Você está construindo sua vida, meu amor.
+
+Talvez nem todos os dias pareçam extraordinários. Talvez algumas conquistas demorem. Talvez existam momentos em que você não consiga perceber o quanto já aprendeu.
+
+Mas não deixe que a pressa faça você esquecer de olhar para o caminho que já percorreu.
+
+Eu espero que você continue tendo coragem para tentar, humildade para aprender, sabedoria para escolher seus caminhos e carinho para cuidar de si mesmo e das pessoas que ama.
+
+E espero que, quando precisar de um lembrete de que é importante, você se recorde de que existe alguém que enxerga muitas qualidades em você.
+
+Essa pessoa sou eu, Richard.
+        </p>
+
+        <div class="signature">Com todo o meu carinho. ❤️</div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: FINAL -->
+    <section class="slide">
+      <div class="card">
+        <div class="eyebrow">A última página desta noite</div>
+        <div class="icon">🌧️💌🌙</div>
+
+        <h1>Meu querido <em>Richard.</em></h1>
+
+        <p class="message">
+Se eu pudesse estar ao seu lado nesta noite chuvosa, gostaria que você pudesse descansar um pouquinho de todas as preocupações e se lembrar de algo muito simples: você é uma pessoa muito especial para mim.
+
+Eu admiro seu esforço, sua dedicação e a vontade de construir seu próprio caminho. Admiro as qualidades que vejo em você e também desejo que você encontre espaço para crescer, aprender e descobrir novas coisas sobre si mesmo.
+
+Não quero que você pense que precisa fazer tudo certo para me deixar orgulhosa. Eu quero que você seja sincero consigo mesmo, cuide do seu coração e continue buscando aquilo que considera importante.
+
+Quero comemorar suas conquistas, torcer por você nos seus projetos e aprender a lidar com as dificuldades ao seu lado, sempre lembrando que nós dois merecemos respeito, carinho e compreensão.
+
+Obrigada por fazer parte da minha vida. Obrigada pelas lembranças que compartilhamos e por todas as pequenas coisas que tornam nossa história nossa.
+
+Se a chuva pudesse levar uma mensagem até você nesta noite, eu escolheria esta:
+
+Você é capaz de aprender.
+Você merece reconhecer suas conquistas.
+Você merece descansar quando precisar.
+E você é amado.
+
+Eu te amo muito, meu amor. Espero que a vida lhe traga oportunidades bonitas, tranquilidade, sabedoria e motivos para sorrir.
+
+Continue acreditando nos seus sonhos, um passo de cada vez.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="small">
+          E quando a chuva passar, que você ainda se lembre de todas as coisas bonitas que existem em você.
+        </p>
+
+        <div class="signature">
+          Com carinho, da sua Luana. ♥️
+        </div>
+
+        <button class="btn primary" style="margin-top:28px"
+          onclick="restartExperience()">
+          LER TUDO NOVAMENTE 🌧️
+        </button>
+      </div>
+    </section>
+
+    <!-- NAVEGAÇÃO -->
+    <div class="controls">
+      <button class="btn" id="prev" onclick="changeSlide(-1)">
+        ← VOLTAR
+      </button>
+
+      <button class="btn primary" id="next" onclick="changeSlide(1)">
+        PRÓXIMO SLIDE →
+      </button>
+    </div>
+
+    <div class="counter" id="counter">01 / 09</div>
+
+    <div class="progress">
+      <span id="progress"></span>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  FEITO COM AMOR POR LUANA · 2026 ♥
+</footer>
+
+<script>
+/* CRIA A CHUVA VISUAL */
+const rainContainer = document.getElementById("rain");
+
+for (let i = 0; i < 100; i++) {
+  const drop = document.createElement("div");
+  drop.className = "drop";
+  drop.style.left = Math.random() * 100 + "%";
+  drop.style.animationDuration = (0.7 + Math.random() * 1.3) + "s";
+  drop.style.animationDelay = (Math.random() * 5) + "s";
+  drop.style.opacity = (0.15 + Math.random() * 0.4);
+  rainContainer.appendChild(drop);
+}
+
+/* CORAÇÕES FLUTUANTES */
+for (let i = 0; i < 12; i++) {
+  const heart = document.createElement("div");
+  heart.className = "heart-float";
+  heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.animationDelay = Math.random() * 12 + "s";
+  heart.style.animationDuration = (8 + Math.random() * 8) + "s";
+  heart.style.fontSize = (12 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+}
+
+/* SLIDES */
+const slides = Array.from(document.querySelectorAll(".slide"));
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+const counter = document.getElementById("counter");
+const progress = document.getElementById("progress");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  currentSlide = Math.max(0, Math.min(index, slides.length - 1));
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === currentSlide);
+  });
+
+  prevButton.style.visibility =
+    currentSlide === 0 ? "hidden" : "visible";
+
+  nextButton.style.display =
+    currentSlide === slides.length - 1 ? "none" : "block";
+
+  counter.textContent =
+    String(currentSlide + 1).padStart(2, "0") +
+    " / " +
+    String(slides.length).padStart(2, "0");
+
+  progress.style.width =
+    ((currentSlide + 1) / slides.length * 100) + "%";
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+}
+
+function restartExperience() {
+  showSlide(0);
+}
+
+/* SOM DE CHUVA GERADO NO NAVEGADOR */
+let audioContext = null;
+let rainSource = null;
+let rainGain = null;
+let rainFilter = null;
+let isRaining = false;
+let noiseBuffer = null;
+
+function createRainSound() {
+  const AudioContextClass =
+    window.AudioContext || window.webkitAudioContext;
+
+  if (!AudioContextClass) {
+    alert("Seu navegador não permite criar o som da chuva.");
+    return false;
+  }
+
+  if (!audioContext) {
+    audioContext = new AudioContextClass();
+
+    const bufferSize = audioContext.sampleRate * 3;
+    noiseBuffer = audioContext.createBuffer(
+      1, bufferSize, audioContext.sampleRate
+    );
+
+    const data = noiseBuffer.getChannelData(0);
+
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = Math.random() * 2 - 1;
+    }
+  }
+
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+
+  rainSource = audioContext.createBufferSource();
+  rainSource.buffer = noiseBuffer;
+  rainSource.loop = true;
+
+  rainFilter = audioContext.createBiquadFilter();
