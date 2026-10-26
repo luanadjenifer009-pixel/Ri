@@ -3,173 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uma cartinha para você, meu amor 🌙❤️ - Richard Oliveira</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<title>Cartinha para Richard 🌙❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:radial-gradient(120% 120% at 20% 10%,#2d245e 0%,#171a3a 35%,#0a0c1e 70%,#050610 100%);color:#f3f0ff;min-height:100dvh;overflow:hidden;position:relative}
-#stars{position:fixed;inset:0;pointer-events:none;z-index:1}
-.star{position:absolute;width:2px;height:2px;background:white;border-radius:50%;box-shadow:0 0 6px 1px rgba(255,255,255,.8);animation:twinkle 3s infinite alternate}
-@keyframes twinkle{0%{opacity:.3}100%{opacity:1}}
-#moon{position:fixed;top:6%;right:8%;width:88px;height:88px;z-index:2;border-radius:50%;background:radial-gradient(circle at 32% 32%,#fffef5 0%,#f9f2c5 28%,#e9d9a0 55%,#d7c27a 100%);box-shadow:0 0 40px 12px rgba(255,245,200,.35),0 0 90px 30px rgba(185,156,255,.25);pointer-events:none}
-#rain{position:fixed;inset:0;pointer-events:none;z-index:3;overflow:hidden}
-.drop{position:absolute;top:-20px;width:1px;height:18px;background:linear-gradient(to bottom,transparent,rgba(180,200,255,.75));animation:fall linear infinite}
-@keyframes fall{to{transform:translateY(110vh) translateX(-20px)}}
-#hearts-layer{position:fixed;inset:0;pointer-events:none;z-index:4}
-.f-heart{position:absolute;bottom:-20px;animation:floatUp linear forwards}
-@keyframes floatUp{0%{transform:translateY(0);opacity:0}10%{opacity:.9}100%{transform:translateY(-110vh);opacity:0}}
-#city{position:fixed;bottom:0;left:0;right:0;height:22vh;z-index:2;pointer-events:none;opacity:.55}
-#progress-wrap{position:fixed;top:0;left:0;right:0;height:4px;z-index:20;background:rgba(255,255,255,.1)}
-#progress-bar{height:100%;width:0;background:linear-gradient(90deg,#f5b7d0,#b99cff);transition:width .6s ease}
-#topbar{position:fixed;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;z-index:20}
-#counter,#soundBtn{background:rgba(255,255,255,.11);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15);padding:6px 14px;border-radius:999px;font-size:12px;color:white;cursor:pointer}
-main{position:relative;z-index:10;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:64px 16px 28px}
-.slide{display:none;max-width:640px;width:100%;animation:slideIn .7s ease}
-.slide.active{display:block}
-@keyframes slideIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.card{background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.06));backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:26px 22px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
-.card h1{font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:12px}
-.card h2{font-family:'Cormorant Garamond',serif;font-size:27px;margin-bottom:14px}
-.card p{font-size:15.5px;line-height:1.65;margin-bottom:14px;color:#e9e4ff}
-.highlight{background:rgba(245,183,208,.18);border-left:3px solid #f5b7d0;padding:12px 14px;border-radius:0 12px 12px 0;margin-top:8px}
-.btn-row{display:flex;gap:10px;margin-top:18px}
-.btn{flex:1;appearance:none;border:none;border-radius:999px;padding:13px 18px;font-size:14px;font-weight:600;cursor:pointer}
-.btn-primary{background:linear-gradient(135deg,#f5b7d0,#b99cff);color:#1a102e}
-.btn-ghost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:white}
-.btn-surpresa{width:100%;background:linear-gradient(135deg,#ffd1e3,#c2adff);color:#2a1640;box-shadow:0 0 20px rgba(245,183,208,.4);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
-.scroll{max-height:60vh;overflow-y:auto;padding-right:6px}
-.scroll::-webkit-scrollbar{width:4px}
-.scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:99px}
-.final-overlay{display:none;position:fixed;inset:0;z-index:50;background:radial-gradient(120% 120% at 50% 10%,#2b235a 0%,#151732 45%,#080815 100%);align-items:center;justify-content:center;padding:18px}
-.final-overlay.show{display:flex}
-.heart-big{font-size:52px;display:block;text-align:center;margin:14px auto;animation:heartBeat 1.2s infinite}
-@keyframes heartBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#0a0c1e;color:#fff;min-height:100vh}
+#bg{position:fixed;inset:0;background:radial-gradient(120% at 20% 10%,#2d245e,#171a3a 35%,#0a0c1e);z-index:0}
+#moon{position:fixed;top:18px;right:18px;width:75px;height:75px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fffef5,#e9d9a0);box-shadow:0 0 25px rgba(255,245,200,.5);z-index:1}
+.card{position:relative;z-index:3;max-width:640px;margin:65px auto 25px;background:rgba(255,255,255,.11);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.15);border-radius:22px;padding:22px}
+h1,h2{font-family:'Cormorant Garamond',serif;margin-bottom:12px}
+h1{font-size:30px} h2{font-size:26px}
+p{font-size:15px;line-height:1.65;margin-bottom:12px;color:#e9e4ff}
+.hl{background:rgba(245,183,208,.18);border-left:3px solid #f5b7d0;padding:10px 12px;border-radius:0 12px 12px 0}
+.btn{width:100%;padding:14px;border:none;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;margin-top:12px;display:block}
+.pri{background:linear-gradient(135deg,#f5b7d0,#b99cff);color:#1a102e}
+.gho{background:rgba(255,255,255,.12);color:white;border:1px solid rgba(255,255,255,.2)}
+#progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#f5b7d0,#b99cff);z-index:10}
+#counter{position:fixed;top:10px;left:10px;background:rgba(255,255,255,.15);padding:6px 12px;border-radius:999px;font-size:12px;z-index:10}
+.scroll{max-height:62vh;overflow-y:auto}
+.final{position:fixed;inset:0;background:#0a0c1e;z-index:20;display:none;align-items:center;justify-content:center;padding:20px}
+.final.show{display:flex}
 </style>
 </head>
 <body>
-<div id="stars"></div><div id="moon"></div><div id="rain"></div><div id="hearts-layer"></div>
-<svg id="city" viewBox="0 0 1200 220" preserveAspectRatio="none"><path d="M0,200 L0,140 L40,140 L40,110 L70,110 L70,80 L110,80 L110,130 L150,130 L150,60 L200,60 L200,100 L240,100 L240,40 L300,40 L300,120 L340,120 L340,90 L380,90 L380,130 L430,130 L430,70 L470,70 L470,110 L520,110 L520,50 L580,50 L580,130 L620,130 L620,85 L660,85 L660,125 L700,125 L700,65 L760,65 L760,110 L800,110 L800,140 L850,140 L850,90 L900,90 L900,130 L950,130 L950,60 L1020,60 L1020,120 L1080,120 L1080,80 L1120,80 L1120,150 L1200,150 L1200,200 Z" fill="rgba(15,15,35,0.9)"/></svg>
-<div id="progress-wrap"><div id="progress-bar"></div></div>
-<div id="topbar"><div id="counter">1 / 12</div><button id="soundBtn" type="button">🔇 Ativar chuva 🌧️</button></div>
-<main>
-<div class="slide active" id="slide-0">
+<div id="bg"></div><div id="moon"></div>
+<div id="progress"></div>
+<div id="counter">1 / 12</div>
+<div id="app"></div>
+<div class="final" id="finalScreen">
 <div class="card" style="text-align:center">
-<h1>Uma cartinha para você, meu amor 🌙❤️</h1>
-<p>Hoje eu preparei uma coisinha especial para você. Quero que leia cada palavra com calma, porque todas elas foram pensadas em alguém que admiro muito: você, Richard. ❤️</p>
-<div class="btn-row" style="justify-content:center"><button type="button" class="btn btn-primary" id="startBtn">Começar nossa cartinha 💌</button></div>
+<h2>Uma última coisinha... 🌧️🌙</h2>
+<p>Richard, nunca se esqueça do homem incrível que você é e de tudo o que ainda pode conquistar.</p>
+<p>Eu admiro sua força de vontade, tenho orgulho da sua dedicação e torço muito pela sua felicidade.</p>
+<p>Continue acreditando em você, respeitando seu tempo e construindo seus sonhos.</p>
+<p>E, quando precisar de um lembrete de que alguém acredita no seu potencial, lembre-se de mim.</p>
+<p><strong>Eu te amo muito, meu menino. ❤️🌙<br>Com carinho, da sua Luana.</strong></p>
+<div style="font-size:48px;margin:12px">❤️</div>
+<button class="btn pri" onclick="location.reload()">Ler minha cartinha novamente 🔄</button>
 </div>
 </div>
 
-<div class="slide" id="slide-1"><div class="card"><div class="scroll">
-<p>❤️ SLIDE 1 — VOCÊ É MAIS INCRÍVEL DO QUE IMAGINA</p>
-<h2>Você é mais incrível do que imagina</h2>
-<p>Richard, meu amor, hoje eu quero te lembrar de uma coisa que talvez você nem perceba todos os dias: você é uma pessoa incrível, e eu tenho muito orgulho de você. ❤️</p>
-<p>Às vezes, a gente fica tão concentrado em trabalhar, correr atrás dos objetivos e tentar conquistar aquilo que deseja que acaba não percebendo o quanto já está se esforçando.</p>
-<p>Mas eu percebo, meu amor. Percebo sua dedicação, sua vontade de crescer e o quanto você se esforça para construir o seu caminho.</p>
-<p>Eu admiro a pessoa que você é, mas também admiro a pessoa que está se tornando. Admiro sua determinação, seus objetivos e essa vontade de conquistar coisas boas para a sua vida.</p>
-<p>Quero que você nunca se esqueça de que seu esforço tem valor, mesmo nos dias em que os resultados parecem demorar.</p>
-<div class="highlight"><strong>Eu tenho muito orgulho de você, Richard, e espero que você consiga enxergar em si mesmo pelo menos uma parte da pessoa maravilhosa que eu vejo.</strong> 💗</div>
-</div><div class="btn-row"><button type="button" class="btn btn-ghost prevBtn">← Voltar</button><button type="button" class="btn btn-primary nextBtn">Próximo →</button></div></div></div>
+<script>
+const textos = [
+{inicio:true, titulo:"Uma cartinha para você, meu amor 🌙❤️", texto:"Hoje eu preparei uma coisinha especial para você. Quero que leia cada palavra com calma, porque todas elas foram pensadas em alguém que admiro muito: você, Richard. ❤️", botao:"Começar nossa cartinha 💌"},
+{titulo:"Você é mais incrível do que imagina", texto:`<p>Richard, meu amor, hoje eu quero te lembrar de uma coisa que talvez você nem perceba todos os dias: você é uma pessoa incrível, e eu tenho muito orgulho de você. ❤️</p><p>Às vezes, a gente fica tão concentrado em trabalhar, correr atrás dos objetivos e tentar conquistar aquilo que deseja que acaba não percebendo o quanto já está se esforçando.</p><p>Mas eu percebo, meu amor. Percebo sua dedicação, sua vontade de crescer e o quanto você se esforça para construir o seu caminho.</p><p>Eu admiro a pessoa que você é, mas também admiro a pessoa que está se tornando. Admiro sua determinação, seus objetivos e essa vontade de conquistar coisas boas para a sua vida.</p><p>Quero que você nunca se esqueça de que seu esforço tem valor, mesmo nos dias em que os resultados parecem demorar.</p><div class="hl"><strong>Eu tenho muito orgulho de você, Richard, e espero que você consiga enxergar em si mesmo pelo menos uma parte da pessoa maravilhosa que eu vejo.</strong> 💗</div>`},
+{titulo:"A sua força de vontade", texto:`<p>Uma das coisas que mais admiro em você é a sua força de vontade, meu amor.</p><p>Eu admiro essa capacidade de continuar buscando aquilo que deseja, de se dedicar às suas responsabilidades e de não deixar seus objetivos de lado.</p><p>Sei que nem todos os dias são fáceis e que conquistar as coisas exige tempo, paciência e muito esforço. Mas existe algo muito bonito em uma pessoa que continua aprendendo, crescendo e buscando melhorar.</p><p>Para mim, sua força não está em nunca se cansar ou nunca ter dúvidas. Ela também está na disposição de seguir construindo seu futuro, respeitando seu próprio tempo e aprendendo com cada experiência.</p><p>Espero que você nunca perca essa vontade de crescer e realizar seus sonhos.</p><div class="hl"><strong>Nunca duvide do valor da sua dedicação. Eu admiro muito a sua força de vontade e torço de coração por cada conquista sua.</strong> ❤️‍🩹</div>`},
+{titulo:"Eu vejo o seu esforço", texto:`<p>Meu amor, quero que você saiba que eu vejo o quanto você se dedica às suas responsabilidades.</p><p>Eu sei que trabalhar, cumprir compromissos e correr atrás dos próprios objetivos exige energia, paciência e determinação. Nem sempre as pessoas percebem tudo o que existe por trás de cada conquista, mas eu quero que você saiba que admiro esse seu lado.</p><p>Admiro sua disposição para fazer a sua parte, sua dedicação ao que é importante e sua vontade de construir algo para o seu futuro.</p><p>E quero que você também se lembre de que não precisa conquistar tudo de uma vez para ter motivos para sentir orgulho de si mesmo.</p><p>Cada experiência ensina alguma coisa. Cada pequeno avanço também merece ser valorizado.</p><p>Você não precisa provar seu valor o tempo inteiro. Seu valor vai muito além daquilo que você consegue produzir ou conquistar.</p><div class="hl"><strong>Eu tenho orgulho do seu esforço, da sua dedicação e da pessoa que você é, inclusive nos dias em que tudo o que você consegue fazer é dar o próximo pequeno passo.</strong> 💗</div>`},
+{titulo:"O homem que você está se tornando", texto:`<p>Richard, uma das coisas mais bonitas é acompanhar alguém que está construindo o próprio caminho e descobrindo, pouco a pouco, tudo aquilo que pode alcançar.</p><p>Eu admiro suas qualidades, sua dedicação e sua vontade de crescer. Admiro também tudo aquilo que você ainda está aprendendo, porque amadurecer é um processo que acontece um dia de cada vez.</p><p>Você não precisa ter todas as respostas agora. Não precisa saber exatamente como cada detalhe do futuro vai acontecer.</p><p>Continue aprendendo, buscando novas oportunidades e acreditando que seus esforços podem abrir caminhos importantes para você.</p><p>Espero que, com o tempo, você olhe para trás e consiga perceber o quanto cresceu, quantas coisas aprendeu e quantas etapas importantes conseguiu superar.</p><p>Quero que você tenha oportunidades de realizar seus sonhos e que possa sentir orgulho da própria trajetória.</p><div class="hl"><strong>Eu admiro o homem que você é hoje e tenho muito carinho pela pessoa que você está construindo para o amanhã.</strong> ❤️</div>`},
+{titulo:"Você merece conquistar coisas lindas", texto:`<p>Meu amor, quando penso em você e no seu futuro, desejo tantas coisas boas!</p><p>Desejo que seu trabalho seja valorizado, que suas oportunidades aumentem e que você encontre caminhos que te permitam crescer e realizar aquilo que deseja.</p><p>Desejo que seus esforços tragam bons resultados e que você encontre pessoas que reconheçam sua dedicação e respeitem quem você é.</p><p>Quero que você tenha motivos para comemorar suas conquistas, desde as menores até aquelas que hoje parecem distantes.</p><p>E, quando um sonho levar mais tempo do que você imaginava para acontecer, espero que você se lembre de que o seu caminho não precisa ser igual ao de ninguém.</p><p>Cada pessoa tem seu próprio tempo, suas próprias oportunidades e seus próprios desafios.</p><p>Continue fazendo sua parte, aprendendo e cuidando de si mesmo durante o processo.</p><div class="hl"><strong>Eu torço muito para que a vida te surpreenda com oportunidades lindas e que você possa realizar tudo aquilo que faz seu coração ter vontade de continuar.</strong> 🌟❤️</div>`},
+{titulo:"Nos dias em que você estiver cansado", texto:`<p>Meu gatinho, quero que você se lembre de uma coisa: você também merece descansar.</p><p>Sei que você tem responsabilidades, objetivos e coisas importantes pelas quais corre atrás. E admiro muito essa sua dedicação.</p><p>Mas quero que você saiba que não precisa ser forte o tempo inteiro, nem precisa transformar todos os seus dias em uma corrida para conquistar alguma coisa.</p><p>Você pode descansar sem deixar de ser determinado. Pode ter um dia difícil sem que isso apague tudo o que já fez. Pode precisar de um tempo para respirar e ainda continuar sendo alguém cheio de potencial.</p><p>Seu valor não depende de estar trabalhando ou produzindo a todo instante.</p><p>Quero que você cuide da sua saúde, respeite seus limites e encontre momentos para aproveitar as coisas boas da vida também.</p><p>Você merece sentir orgulho das suas conquistas, mas também merece ter paz durante o caminho.</p><div class="hl"><strong>Eu admiro muito a sua força, meu amor, e desejo que você tenha energia para realizar seus sonhos sem esquecer de cuidar da pessoa mais importante dessa jornada: você mesmo.</strong> 🫂❤️</div>`},
+{titulo:"Continue acreditando em você", texto:`<p>Olha para essa chuva na tela, meu amor. 🌧️</p><p>Às vezes, o céu fica coberto de nuvens e parece que a luz está escondida. Mas isso não significa que ela deixou de existir.</p><p>A vida também tem momentos em que as coisas parecem caminhar devagar, em que os planos precisam mudar ou em que os resultados demoram a aparecer.</p><p>Nessas horas, quero que você se lembre de tudo o que já aprendeu e de todas as vezes em que teve coragem de tentar algo novo.</p><p>Não precisa comparar sua caminhada com a de outras pessoas. Você tem sua própria história, suas próprias capacidades e seu próprio tempo para crescer.</p><p>Continue acreditando no que pode construir. Continue aprendendo. Continue reconhecendo cada passo que dá em direção aos seus objetivos.</p><p>E lembre-se de que pedir ajuda, mudar de estratégia ou descansar também pode fazer parte de uma caminhada de sucesso.</p><div class="hl"><strong>Eu acredito no seu potencial, Richard, e espero que você nunca deixe de reconhecer as coisas boas que existem em você.</strong> 🌙💗</div>`},
+{titulo:"O meu orgulho de você", texto:`<p>Se eu pudesse transformar o orgulho que sinto por você em palavras que ocupassem o céu inteiro, ainda acho que faltaria espaço.</p><p>Tenho orgulho da sua dedicação, da sua vontade de conquistar suas coisas e da maneira como você busca construir seu futuro.</p><p>Tenho orgulho de poder conhecer seus sonhos, ouvir sobre seus objetivos e acompanhar os pequenos pedaços da sua caminhada.</p><p>Não é necessário que você conquiste algo grandioso todos os dias para me fazer admirar você.</p><p>Eu também admiro as pequenas atitudes, a dedicação que nem sempre aparece para os outros e a disposição para continuar aprendendo.</p><p>Quero que você saiba que não precisa ser perfeito para ser admirado. Você pode estar aprendendo, descobrindo o que funciona para você e mudando de planos quando necessário.</p><p>O mais importante é continuar construindo uma vida que faça sentido para você, sem esquecer suas qualidades e tudo aquilo que ainda pode aprender.</p><div class="hl"><strong>Richard, eu tenho muito orgulho de você. E quero que esta cartinha seja um lembrete de que existe alguém aqui que admira sua caminhada e torce sinceramente pela sua felicidade.</strong> ❤️‍🩹</div>`},
+{titulo:"Eu torço por cada sonho seu", texto:`<p>Meu amor, quero ver você conquistando seus objetivos, realizando seus planos e encontrando oportunidades que façam seus olhos brilharem.</p><p>Quero que você tenha orgulho do seu trabalho, que possa aprender coisas novas e que encontre caminhos para crescer cada vez mais.</p><p>Quero comemorar suas vitórias com você, ouvir suas novidades e ver sua felicidade quando alguma coisa pela qual você se dedicou finalmente der certo.</p><p>E, quando seus planos precisarem mudar, quero que você saiba que isso não diminui sua capacidade nem apaga suas qualidades.</p><p>Você pode descobrir novos caminhos, desenvolver novas habilidades e encontrar oportunidades que hoje nem imagina.</p><p>Não tenha medo de continuar aprendendo e de construir a vida que deseja no seu próprio ritmo.</p><p>Que Deus ilumine suas decisões, te dê sabedoria para escolher seus caminhos e te acompanhe em cada etapa da sua jornada.</p><div class="hl"><strong>Seus sonhos são importantes, Richard, e eu desejo de coração que você encontre muitas oportunidades para transformá-los em realidade.</strong> 🙏🏻❤️</div>`},
+{titulo:"Se você pudesse se ver pelos meus olhos...", texto:`<p>Se você pudesse se ver pelos meus olhos por alguns instantes, meu amor, talvez entendesse melhor o motivo de tanto orgulho.</p><p>Você veria alguém que tem sonhos, responsabilidades, qualidades e uma vontade de construir o próprio futuro.</p><p>Veria alguém que não precisa saber tudo para continuar aprendendo e que não precisa ter a vida inteira resolvida para merecer reconhecimento.</p><p>Veria uma pessoa que pode crescer, descobrir novas possibilidades e construir uma trajetória cheia de experiências importantes.</p><p>Eu não conheço todas as dificuldades que você enfrenta nem consigo imaginar cada pensamento que passa pela sua cabeça. Mas sei que admiro muito sua dedicação e desejo que você tenha motivos para se sentir feliz com quem é e com aquilo que está construindo.</p><p>Espero que você também aprenda a reconhecer suas próprias qualidades, comemorar suas conquistas e tratar a si mesmo com a mesma paciência que merece receber.</p><div class="hl"><strong>Se eu pudesse te dar um presente hoje, seria a oportunidade de enxergar por alguns instantes o quanto você é especial e o quanto eu admiro a pessoa que você é.</strong> 🥹💗</div>`},
+{titulo:"Para o meu menino, Richard", final:true, texto:`<p>Meu amor, chegamos ao final da cartinha, mas eu ainda tenho muita coisa boa para te desejar. ❤️</p><p>Desejo que você tenha saúde para viver tudo aquilo com que sonha, sabedoria para tomar suas decisões, coragem para aproveitar boas oportunidades e tranquilidade para aproveitar cada etapa da sua vida.</p><p>Desejo que seu trabalho te traga aprendizado e reconhecimento, que sua dedicação abra portas e que você encontre motivos para se orgulhar da sua caminhada.</p><p>Espero que nunca faltem sonhos para te inspirar, pessoas boas para compartilhar momentos com você e oportunidades para descobrir novas capacidades.</p><p>Que Deus abençoe seus passos, proteja sua vida e te dê sabedoria para enfrentar os desafios que aparecerem pelo caminho.</p><p>E, acima de tudo, quero que você se lembre de que não precisa chegar a um destino específico para ter valor. Você merece respeito, carinho e felicidade durante todo o processo de construir o seu futuro.</p><p>Obrigada por ser você, por compartilhar sua vida comigo e por me permitir conhecer um pouquinho dos seus sonhos.</p><p>Eu admiro sua força de vontade, sua dedicação e a pessoa que você está se tornando.</p><p>Espero que você nunca esqueça o quanto é especial para mim.</p><div class="hl"><strong>Eu te amo, Richard. Tenho muito orgulho de você e estarei torcendo para que a vida te traga muitas conquistas, alegrias e motivos para sorrir.</strong> ❤️🌙<br><br>Com todo o meu carinho,<br><strong>Sua princesa, Luana. ❤️</strong></div>`}
+];
 
-<div class="slide" id="slide-2"><div class="card"><div class="scroll">
-<p>🌧️ SLIDE 2 — A SUA FORÇA DE VONTADE</p><h2>A sua força de vontade</h2>
-<p>Uma das coisas que mais admiro em você é a sua força de vontade, meu amor.</p>
-<p>Eu admiro essa capacidade de continuar buscando aquilo que deseja, de se dedicar às suas responsabilidades e de não deixar seus objetivos de lado.</p>
-<p>Sei que nem todos os dias são fáceis e que conquistar as coisas exige tempo, paciência e muito esforço. Mas existe algo muito bonito em uma pessoa que continua aprendendo, crescendo e buscando melhorar.</p>
-<p>Para mim, sua força não está em nunca se cansar ou nunca ter dúvidas. Ela também está na disposição de seguir construindo seu futuro, respeitando seu próprio tempo e aprendendo com cada experiência.</p>
-<p>Espero que você nunca perca essa vontade de crescer e realizar seus sonhos.</p>
-<div class="highlight"><strong>Nunca duvide do valor da sua dedicação. Eu admiro muito a sua força de vontade e torço de coração por cada conquista sua.</strong> ❤️‍🩹</div>
-</div><div class="btn-row"><button type="button" class="btn btn-ghost prevBtn">← Voltar</button><button type="button" class="btn btn-primary nextBtn">Próximo →</button></div></div></div>
-
-<div class="slide" id="slide-3"><div class="card"><div class="scroll">
-<p>🛠️ SLIDE 3 — EU VEJO O SEU ESFORÇO</p><h2>Eu vejo o seu esforço</h2>
-<p>Meu amor, quero que você saiba que eu vejo o quanto você se dedica às suas responsabilidades.</p>
-<p>Eu sei que trabalhar, cumprir compromissos e correr atrás dos próprios objetivos exige energia, paciência e determinação. Nem sempre as pessoas percebem tudo o que existe por trás de cada conquista, mas eu quero que você saiba que admiro esse seu lado.</p>
-<p>Admiro sua disposição para fazer a sua parte, sua dedicação ao que é importante e sua vontade de construir algo para o seu futuro.</p>
-<p>E quero que você também se lembre de que não precisa conquistar tudo de uma vez para ter motivos para sentir orgulho de si mesmo.</p>
-<p>Cada experiência ensina alguma coisa. Cada pequeno avanço também merece ser valorizado.</p>
-<p>Você não precisa provar seu valor o tempo inteiro. Seu valor vai muito além daquilo que você consegue produzir ou conquistar.</p>
-<div class="highlight"><strong>Eu tenho orgulho do seu esforço, da sua dedicação e da pessoa que você é, inclusive nos dias em que tudo o que você consegue fazer é dar o próximo pequeno passo.</strong> 💗</div>
-</div><div class="btn-row"><button type="button" class="btn btn-ghost prevBtn">← Voltar</button><button type="button" class="btn btn-primary nextBtn">Próximo →</button></div></div></div>
-
-<div class="slide" id="slide-4"><div class="card"><div class="scroll">
-<p>🌙 SLIDE 4 — O HOMEM QUE VOCÊ ESTÁ SE TORNANDO</p><h2>O homem que você está se tornando</h2>
-<p>Richard, uma das coisas mais bonitas é acompanhar alguém que está construindo o próprio caminho e descobrindo, pouco a pouco, tudo aquilo que pode alcançar.</p>
-<p>Eu admiro suas qualidades, sua dedicação e sua vontade de crescer. Admiro também tudo aquilo que você ainda está aprendendo, porque amadurecer é um processo que acontece um dia de cada vez.</p>
-<p>Você não precisa ter todas as respostas agora. Não precisa saber exatamente como cada detalhe do futuro vai acontecer.</p>
-<p>Continue aprendendo, buscando novas oportunidades e acreditando que seus esforços podem abrir caminhos importantes para você.</p>
-<p>Espero que, com o tempo, você olhe para trás e consiga perceber o quanto cresceu, quantas coisas aprendeu e quantas etapas importantes conseguiu superar.</p>
-<p>Quero que você tenha oportunidades de realizar seus sonhos e que possa sentir orgulho da própria trajetória.</p>
-<div class="highlight"><strong>Eu admiro o homem que você é hoje e tenho muito carinho pela pessoa que você está construindo para o amanhã.</strong> ❤️</div>
-</div><div class="btn-row"><button type="button" class="btn btn-ghost prevBtn">← Voltar</button><button type="button" class="btn btn-primary nextBtn">Próximo →</button></div></div></div>
-
-<div class="slide" id="slide-5"><div class="card"><div class="scroll">
-<p>✨ SLIDE 5 — VOCÊ MERECE CONQUISTAR COISAS LINDAS</p><h2>Você merece conquistar coisas lindas</h2>
-<p>Meu amor, quando penso em você e no seu futuro, desejo tantas coisas boas!</p>
-<p>Desejo que seu trabalho seja valorizado, que suas oportunidades aumentem e que você encontre caminhos que te permitam crescer e realizar aquilo que deseja.</p>
-<p>Desejo que seus esforços tragam bons resultados e que você encontre pessoas que reconheçam sua dedicação e respeitem quem você é.</p>
-<p>Quero que você tenha motivos para comemorar suas conquistas, desde as menores até aquelas que hoje parecem distantes.</p>
-<p>E, quando um sonho levar mais tempo do que você imaginava para acontecer, espero que você se lembre de que o seu caminho não precisa ser igual ao de ninguém.</p>
-<p>Cada pessoa tem seu próprio tempo, suas próprias oportunidades e seus próprios desafios.</p>
-<p>Continue fazendo sua parte, aprendendo e cuidando de si mesmo durante o processo.</p>
-<div class="highlight"><strong>Eu torço muito para que a vida te surpreenda com oportunidades lindas e que você possa realizar tudo aquilo que faz seu coração ter vontade de continuar.</strong> 🌟❤️</div>
-</div><div class="btn-row"><button type="button" class="btn btn-ghost prevBtn">← Voltar</button><button type="button" class="btn btn-primary nextBtn">Próximo →</button></div></div></div>
-
-<div class="slide" id="slide-6"><div class="card"><div class="scroll">
-<p>🥹 SLIDE 6 — NOS DIAS EM QUE VOCÊ ESTIVER CANSADO</p><h2>Nos dias em que você estiver cansado</h2>
-<p>Meu gatinho, quero que você se lembre de uma coisa: você também merece descansar.</p>
-<p>Sei que você tem responsabilidades, objetivos e coisas importantes pelas quais corre atrás. E admiro muito essa sua dedicação.</p>
-<p>Mas quero que você saiba que não precisa ser forte o tempo inteiro, nem precisa transformar todos os seus dias em uma corrida para conquistar alguma coisa.</p>
-<p>Você pode descansar sem deixar de ser determinado. Pode ter um dia difícil sem que isso apague tudo o que já fez. Pode precisar de um tempo para respirar e ainda continuar sendo alguém cheio de potencial.</p>
-<p>Seu valor não depende de estar trabalhando ou produzindo a todo instante.</p>
-<p>Quero que você cuide da sua saúde, respeite seus limites e encontre momentos para aproveitar as coisas boas da vida também.</p>
-<p>Você merece sentir orgulho das suas conquistas, mas também merece ter paz durante o caminho.</p>
-<div class="highlight"><strong>Eu admiro muito a sua força, meu amor, e desejo que você tenha energia para realizar seus sonhos sem esquecer de cuidar da pessoa mais importante dessa jornada: você mesmo.</strong> 🫂❤️</div>
-</div><div class="btn-row"><button type="button" class="btn btn-ghost prevBtn">← Voltar</button><button type="button" class="btn btn-primary nextBtn">Próximo →</button></div></div></div>
-
-<div class="slide" id="slide-7"><div class="card"><div class="scroll">
-<p>🌧️ SLIDE 7 — CONTINUE ACREDITANDO EM VOCÊ</p><h2>Continue acreditando em você</h2>
-<p>Olha para essa chuva na tela, meu amor. 🌧️</p>
-<p>Às vezes, o céu fica coberto de nuvens e parece que a luz está escondida. Mas isso não significa que ela deixou de existir.</p>
-<p>A vida também tem momentos em que as coisas parecem caminhar devagar, em que os planos precisam mudar ou em que os resultados demoram a aparecer.</p>
-<p>Nessas horas, quero que você se lembre de tudo o que já aprendeu e de todas as vezes em que teve coragem de tentar algo novo.</p>
-<p>Não precisa comparar sua caminhada com a de outras pessoas. Você tem sua própria história, suas próprias capacidades e seu próprio tempo para crescer.</p>
-<p>Continue acreditando no que pode construir. Continue aprendendo. Continue reconhecendo cada passo que dá em direção aos seus objetivos.</p>
-<p>E lembre-se de que pedir ajuda, mudar de estratégia ou descansar também pode fazer parte de uma caminhada de sucesso.</p>
-<div class="highlight"><strong>Eu acredito no seu potencial, Richard, e espero que você nunca deixe de reconhecer as coisas boas que existem em você.</strong> 🌙💗</div>
-</div><div class="btn-row"><button type="button" class="btn btn-ghost prevBtn">← Voltar</button><button type="button" class="btn btn-primary nextBtn">Próximo →</button></div></div></div>
-
-<div class="slide" id="slide-8"><div class="card"><div class="scroll">
-<p>🐺 SLIDE 8 — O MEU ORGULHO DE VOCÊ</p><h2>O meu orgulho de você</h2>
-<p>Se eu pudesse transformar o orgulho que sinto por você em palavras que ocupassem o céu inteiro, ainda acho que faltaria espaço.</p>
-<p>Tenho orgulho da sua dedicação, da sua vontade de conquistar suas coisas e da maneira como você busca construir seu futuro.</p>
-<p>Tenho orgulho de poder conhecer seus sonhos, ouvir sobre seus objetivos e acompanhar os pequenos pedaços da sua caminhada.</p>
-<p>Não é necessário que você conquiste algo grandioso todos os dias para me fazer admirar você.</p>
-<p>Eu também admiro as pequenas atitudes, a dedicação que nem sempre aparece para os outros e a disposição para continuar aprendendo.</p>
-<p>Quero que você saiba que não precisa ser perfeito para ser admirado. Você pode estar aprendendo, descobrindo o que funciona para você e mudando de planos quando necessário.</p>
-<p>O mais importante é continuar construindo uma vida que faça sentido para você, sem esquecer suas qualidades e tudo aquilo que ainda pode aprender.</p>
-<div class="highlight"><strong>Richard, eu tenho muito orgulho de você. E quero que esta cartinha seja um lembrete de que existe alguém aqui que admira sua caminhada e torce sinceramente pela sua felicidade.</strong> ❤️‍🩹</div>
-</div><div class="btn-row"><button type="button" class="btn btn-ghost prevBtn">← Voltar</button><button type="button" class="btn btn-primary nextBtn">Próximo →</button></div></div></div>
-
-<div class="slide" id="slide-9"><div class="card"><div class="scroll">
-<p>💫 SLIDE 9 — EU TORÇO POR CADA SONHO SEU</p><h2>Eu torço por cada sonho seu</h2>
-<p>Meu amor, quero ver você conquistando seus objetivos, realizando seus planos e encontrando oportunidades que façam seus olhos brilharem.</p>
-<p>Quero que você tenha orgulho do seu trabalho, que possa aprender coisas novas e que encontre caminhos para crescer cada vez mais.</p>
-<p>Quero comemorar suas vitórias com você, ouvir suas novidades e ver sua felicidade quando alguma coisa pela qual você se dedicou finalmente der certo.</p>
-<p>E, quando seus planos precisarem mudar, quero que você saiba que isso não diminui sua capacidade nem apaga suas qualidades.</p>
-<p>Você pode descobrir novos caminhos, desenvolver novas habilidades e encontrar oportunidades que hoje nem imagina.</p>
-<p>Não tenha medo de continuar aprendendo e de construir a vida que deseja no seu próprio ritmo.</p>
-<p>Que Deus ilumine suas decisões, te dê sabedoria para escolher seus caminhos e te acompanhe em cada etapa da sua jornada.</p>
-<div class="highlight"><strong>Seus sonhos são importantes, Richard, e eu desejo de coração que você encontre muitas oportunidades para transformá-los em realidade.</strong> 🙏🏻❤️</div>
-</div><div class="btn-row"><button type="button" class="btn btn-ghost prevBtn">← Voltar</button><button type="button" class="btn btn-primary nextBtn">Próximo →</button></div></div></div>
-
-<div class="slide" id="slide-10"><div class="card"><div class="scroll">
-<p>🌌 SLIDE 10 — SE VOCÊ PUDESSE SE VER PELOS MEUS OLHOS…</p><h2>Se você pudesse se ver pelos meus olhos...</h2>
-<p>Se você pudesse se ver pelos meus olhos por alguns instantes, meu amor, talvez entendesse melhor o motivo de tanto orgulho.</p>
-<p>Você veria alguém que tem sonhos, responsabilidades, qualidades e uma vontade de construir o próprio futuro.</p>
-<p>Veria alguém que não precisa saber tudo para continuar aprendendo e que não precisa ter a vida inteira resolvida para merecer reconhecimento.</p>
-<p>Veria uma pessoa que pode crescer, descobrir novas possibilidades e construir uma trajetória cheia de experiências importantes.</p>
-<p>Eu não conheço todas as dificuldades que você enfrenta nem consigo imaginar cada pensamento que passa pela sua cabeça. Mas sei que admiro muito sua dedicação e desejo que você tenha motivos para se sentir feliz com quem é e com aquilo que está construindo.</p>
-<p>Espero que você também aprenda a reconhecer suas próprias qualidades, comemorar suas conquistas e tratar a si mesmo com a mesma paciência que merece receber.</p>
-<div class="highlight"><strong>Se eu pudesse te dar um presente hoje, seria a oportunidade de enxergar por algu
+let i = 0;
+function mostrar(){
+ const p = textos[i];
+ const app = document.getElementById('app');
+ let html = '<div class="card"><div class="scroll">';
+ if(p.inicio){
+   html += `<h1>${p.titulo}</h1><p>${p.texto}</p><button class="btn pri" onclick="proximo()">${p.botao}</button>`;
+ } else {
+   html += `<h2>${p.titulo}</h2>${p.texto}`;
+   if(p.final){
+     html += `<button class="btn pri" onclick="mostrarFinal()">Tenho mais uma coisinha para você 💌</button>`;
+   } else {
+     html += `<button class="btn pri" onclick="proximo()">Próximo →</button>`;
+   }
+   if(i>0) html += `<button class="btn gho" onclick="voltar()">← Voltar</button>`;
+ }
+ html += '</div></div>';
+ app.innerHTML = html;
+ document.getElementById('counter').innerText = (i+1)+' / '+textos.length;
+ document.getElementById('progress').style.width = ((i+1)/textos.length*100)+'%';
+ window.scrollTo(0,0);
+}
+function proximo(){ if(i < textos.length-1){ i++; mostrar(); } }
+function voltar(){ if(i>0){ i--; mostrar(); } }
+function mostrarFinal(){ document.getElementById('finalScreen').classList.add('show'); }
+mostrar();
+</script>
+</body>
+</html>
